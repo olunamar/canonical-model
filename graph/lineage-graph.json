@@ -1,0 +1,450 @@
+{
+  "nodes": [
+    {
+      "id": "/customers/CUST-000001.md",
+      "name": "Customer A",
+      "domain": "Customers",
+      "type": "PUBLIC",
+      "path": "/customers/CUST-000001.md"
+    },
+    {
+      "id": "/environments/EV-CS1-PRO.md",
+      "name": "Production",
+      "domain": "Environments",
+      "type": "CanonicalEntity",
+      "path": "/environments/EV-CS1-PRO.md"
+    },
+    {
+      "id": "/infrastructure/IF-APS-TMC-001.md",
+      "name": "TOMCAT-LINUX-001",
+      "domain": "Infrastructure",
+      "type": "CanonicalEntity",
+      "path": "/infrastructure/IF-APS-TMC-001.md"
+    },
+    {
+      "id": "/infrastructure/IF-APS-TMC-002.md",
+      "name": "TOMCAT-LINUX-002",
+      "domain": "Infrastructure",
+      "type": "CanonicalEntity",
+      "path": "/infrastructure/IF-APS-TMC-002.md"
+    },
+    {
+      "id": "/infrastructure/IF-APS-TMC-003.md",
+      "name": "TOMCAT-LINUX-003",
+      "domain": "Infrastructure",
+      "type": "CanonicalEntity",
+      "path": "/infrastructure/IF-APS-TMC-003.md"
+    },
+    {
+      "id": "/infrastructure/IF-APS-TMC-004.md",
+      "name": "TOMCAT-LINUX-004",
+      "domain": "Infrastructure",
+      "type": "CanonicalEntity",
+      "path": "/infrastructure/IF-APS-TMC-004.md"
+    },
+    {
+      "id": "/infrastructure/IF-CLS-KVM-001.md",
+      "name": "CLUSTER-GLOBAL-01",
+      "domain": "Infrastructure",
+      "type": "CanonicalEntity",
+      "path": "/infrastructure/IF-CLS-KVM-001.md"
+    },
+    {
+      "id": "/infrastructure/IF-DBI-ORA-001.md",
+      "name": "ORACLE-DB-TLP",
+      "domain": "Infrastructure",
+      "type": "CanonicalEntity",
+      "path": "/infrastructure/IF-DBI-ORA-001.md"
+    },
+    {
+      "id": "/infrastructure/IF-DBI-ORA-002.md",
+      "name": "ORACLE-DB-LP1",
+      "domain": "Infrastructure",
+      "type": "CanonicalEntity",
+      "path": "/infrastructure/IF-DBI-ORA-002.md"
+    },
+    {
+      "id": "/infrastructure/IF-DBI-ORA-003.md",
+      "name": "ORACLE-DB-BPM",
+      "domain": "Infrastructure",
+      "type": "CanonicalEntity",
+      "path": "/infrastructure/IF-DBI-ORA-003.md"
+    },
+    {
+      "id": "/infrastructure/IF-DBI-ORA-004.md",
+      "name": "ORACLE-DB-XXI-1",
+      "domain": "Infrastructure",
+      "type": "CanonicalEntity",
+      "path": "/infrastructure/IF-DBI-ORA-004.md"
+    },
+    {
+      "id": "/infrastructure/IF-DBI-ORA-005.md",
+      "name": "ORACLE-DB-XXI-2",
+      "domain": "Infrastructure",
+      "type": "CanonicalEntity",
+      "path": "/infrastructure/IF-DBI-ORA-005.md"
+    },
+    {
+      "id": "/infrastructure/IF-DBP-ORA-001.md",
+      "name": "CLUSTER-ORACLE-CS1",
+      "domain": "Infrastructure",
+      "type": "CanonicalEntity",
+      "path": "/infrastructure/IF-DBP-ORA-001.md"
+    },
+    {
+      "id": "/infrastructure/IF-DBP-ORA-002.md",
+      "name": "CLUSTER-ORACLE-CS2",
+      "domain": "Infrastructure",
+      "type": "CanonicalEntity",
+      "path": "/infrastructure/IF-DBP-ORA-002.md"
+    },
+    {
+      "id": "/infrastructure/IF-SVR-EXA-001.md",
+      "name": "SERVER-EXA-01",
+      "domain": "Infrastructure",
+      "type": "CanonicalEntity",
+      "path": "/infrastructure/IF-SVR-EXA-001.md"
+    },
+    {
+      "id": "/infrastructure/IF-SVR-LNX-001.md",
+      "name": "SERVER-LINUX-001",
+      "domain": "Infrastructure",
+      "type": "CanonicalEntity",
+      "path": "/infrastructure/IF-SVR-LNX-001.md"
+    },
+    {
+      "id": "/infrastructure/IF-VMS-EXA-001.md",
+      "name": "VM-EXA-001",
+      "domain": "Infrastructure",
+      "type": "CanonicalEntity",
+      "path": "/infrastructure/IF-VMS-EXA-001.md"
+    },
+    {
+      "id": "/infrastructure/IF-VMS-LNX-001.md",
+      "name": "VM-LINUX-001",
+      "domain": "Infrastructure",
+      "type": "CanonicalEntity",
+      "path": "/infrastructure/IF-VMS-LNX-001.md"
+    },
+    {
+      "id": "/infrastructure/IF-VMS-LNX-002.md",
+      "name": "VM-LINUX-002",
+      "domain": "Infrastructure",
+      "type": "CanonicalEntity",
+      "path": "/infrastructure/IF-VMS-LNX-002.md"
+    },
+    {
+      "id": "/infrastructure/IF-VMS-LNX-003.md",
+      "name": "VM-LINUX-003",
+      "domain": "Infrastructure",
+      "type": "CanonicalEntity",
+      "path": "/infrastructure/IF-VMS-LNX-003.md"
+    },
+    {
+      "id": "/infrastructure/IF-VMS-LNX-004.md",
+      "name": "VM-LINUX-004",
+      "domain": "Infrastructure",
+      "type": "CanonicalEntity",
+      "path": "/infrastructure/IF-VMS-LNX-004.md"
+    },
+    {
+      "id": "/infrastructure/IF-VMS-LNX-005.md",
+      "name": "VM-LINUX-005",
+      "domain": "Infrastructure",
+      "type": "CanonicalEntity",
+      "path": "/infrastructure/IF-VMS-LNX-005.md"
+    },
+    {
+      "id": "/services/SRV-CS1-SRVA.md",
+      "name": "Service SILVER",
+      "domain": "Services",
+      "type": "CanonicalEntity",
+      "path": "/services/SRV-CS1-SRVA.md"
+    },
+    {
+      "id": "/services/SRV-CS1-SRVB.md",
+      "name": "Service GOLD",
+      "domain": "Services",
+      "type": "CanonicalEntity",
+      "path": "/services/SRV-CS1-SRVB.md"
+    },
+    {
+      "id": "/workloads/WL-CS1-EMP.md",
+      "name": "Portal del empleado (CSTA-EMP)",
+      "domain": "Workloads",
+      "type": "CanonicalEntity",
+      "path": "/workloads/WL-CS1-EMP.md"
+    },
+    {
+      "id": "/workloads/WL-CS1-TM4.md",
+      "name": "Cat\u00e1logo de servicios (TEAM-4)",
+      "domain": "Workloads",
+      "type": "CanonicalEntity",
+      "path": "/workloads/WL-CS1-TM4.md"
+    },
+    {
+      "id": "/workloads/WL-CS1-XXI.md",
+      "name": "ERP Compa\u00f1ia (XXI-PORTAL)",
+      "domain": "Workloads",
+      "type": "CanonicalEntity",
+      "path": "/workloads/WL-CS1-XXI.md"
+    }
+  ],
+  "edges": [
+    {
+      "source": "/customers/CUST-000001.md",
+      "target": "/workloads/WL-CS1-EMP.md",
+      "relationship": "OWNS"
+    },
+    {
+      "source": "/customers/CUST-000001.md",
+      "target": "/workloads/WL-CS1-TM4.md",
+      "relationship": "OWNS"
+    },
+    {
+      "source": "/customers/CUST-000001.md",
+      "target": "/workloads/WL-CS1-XXI.md",
+      "relationship": "OWNS"
+    },
+    {
+      "source": "/customers/CUST-000001.md",
+      "target": "/services/SRV-CS1-SRVA.md",
+      "relationship": "CONSUMES"
+    },
+    {
+      "source": "/customers/CUST-000001.md",
+      "target": "/services/SRV-CS1-SRVB.md",
+      "relationship": "CONSUMES"
+    },
+    {
+      "source": "/environments/EV-CS1-PRO.md",
+      "target": "/workloads/WL-CS1-TM4.md",
+      "relationship": "CONTAINS"
+    },
+    {
+      "source": "/environments/EV-CS1-PRO.md",
+      "target": "/workloads/WL-CS1-XXI.md",
+      "relationship": "CONTAINS"
+    },
+    {
+      "source": "/environments/EV-CS1-PRO.md",
+      "target": "/workloads/WL-CS1-EMP.md",
+      "relationship": "CONTAINS"
+    },
+    {
+      "source": "/environments/EV-CS1-PRO.md",
+      "target": "/services/SRV-CS1-SRVA.md",
+      "relationship": "USES"
+    },
+    {
+      "source": "/infrastructure/IF-APS-TMC-001.md",
+      "target": "/workloads/WL-CS1-EMP.md",
+      "relationship": "HOSTS"
+    },
+    {
+      "source": "/infrastructure/IF-APS-TMC-001.md",
+      "target": "/infrastructure/IF-VMS-LNX-001.md",
+      "relationship": "RUNS_ON"
+    },
+    {
+      "source": "/infrastructure/IF-APS-TMC-002.md",
+      "target": "/workloads/WL-CS1-TM4.md",
+      "relationship": "HOSTS"
+    },
+    {
+      "source": "/infrastructure/IF-APS-TMC-002.md",
+      "target": "/infrastructure/IF-VMS-LNX-002.md",
+      "relationship": "RUNS_ON"
+    },
+    {
+      "source": "/infrastructure/IF-APS-TMC-003.md",
+      "target": "/workloads/WL-CS1-XXI.md",
+      "relationship": "HOSTS"
+    },
+    {
+      "source": "/infrastructure/IF-APS-TMC-003.md",
+      "target": "/infrastructure/IF-VMS-LNX-004.md",
+      "relationship": "RUNS_ON"
+    },
+    {
+      "source": "/infrastructure/IF-APS-TMC-003.md",
+      "target": "/infrastructure/IF-VMS-LNX-005.md",
+      "relationship": "RUNS_ON"
+    },
+    {
+      "source": "/infrastructure/IF-APS-TMC-004.md",
+      "target": "/workloads/WL-CS1-XXI.md",
+      "relationship": "HOSTS"
+    },
+    {
+      "source": "/infrastructure/IF-APS-TMC-004.md",
+      "target": "/infrastructure/IF-VMS-LNX-005.md",
+      "relationship": "RUNS_ON"
+    },
+    {
+      "source": "/infrastructure/IF-APS-TMC-004.md",
+      "target": "/infrastructure/IF-VMS-LNX-004.md",
+      "relationship": "RUNS_ON"
+    },
+    {
+      "source": "/infrastructure/IF-DBI-ORA-001.md",
+      "target": "/workloads/WL-CS1-EMP.md",
+      "relationship": "USED_BY"
+    },
+    {
+      "source": "/infrastructure/IF-DBI-ORA-001.md",
+      "target": "/infrastructure/IF-DBP-ORA-001.md",
+      "relationship": "MEMBER_OF"
+    },
+    {
+      "source": "/infrastructure/IF-DBI-ORA-001.md",
+      "target": "/infrastructure/IF-VMS-EXA-001.md",
+      "relationship": "RUNS_ON"
+    },
+    {
+      "source": "/infrastructure/IF-DBI-ORA-002.md",
+      "target": "/workloads/WL-CS1-EMP.md",
+      "relationship": "USED_BY"
+    },
+    {
+      "source": "/infrastructure/IF-DBI-ORA-002.md",
+      "target": "/infrastructure/IF-DBP-ORA-001.md",
+      "relationship": "MEMBER_OF"
+    },
+    {
+      "source": "/infrastructure/IF-DBI-ORA-002.md",
+      "target": "/infrastructure/IF-VMS-EXA-001.md",
+      "relationship": "RUNS_ON"
+    },
+    {
+      "source": "/infrastructure/IF-DBI-ORA-003.md",
+      "target": "/workloads/WL-CS1-TM4.md",
+      "relationship": "USED_BY"
+    },
+    {
+      "source": "/infrastructure/IF-DBI-ORA-003.md",
+      "target": "/infrastructure/IF-DBP-ORA-002.md",
+      "relationship": "MEMBER_OF"
+    },
+    {
+      "source": "/infrastructure/IF-DBI-ORA-003.md",
+      "target": "/infrastructure/IF-VMS-LNX-003.md",
+      "relationship": "RUNS_ON"
+    },
+    {
+      "source": "/infrastructure/IF-DBI-ORA-004.md",
+      "target": "/workloads/WL-CS1-XXI.md",
+      "relationship": "USED_BY"
+    },
+    {
+      "source": "/infrastructure/IF-DBI-ORA-004.md",
+      "target": "/infrastructure/IF-DBP-ORA-001.md",
+      "relationship": "MEMBER_OF"
+    },
+    {
+      "source": "/infrastructure/IF-DBI-ORA-004.md",
+      "target": "/infrastructure/IF-VMS-EXA-001.md",
+      "relationship": "RUNS_ON"
+    },
+    {
+      "source": "/infrastructure/IF-DBI-ORA-005.md",
+      "target": "/workloads/WL-CS1-XXI.md",
+      "relationship": "USED_BY"
+    },
+    {
+      "source": "/infrastructure/IF-DBI-ORA-005.md",
+      "target": "/infrastructure/IF-DBP-ORA-001.md",
+      "relationship": "MEMBER_OF"
+    },
+    {
+      "source": "/infrastructure/IF-DBI-ORA-005.md",
+      "target": "/infrastructure/IF-VMS-EXA-001.md",
+      "relationship": "RUNS_ON"
+    },
+    {
+      "source": "/infrastructure/IF-VMS-EXA-001.md",
+      "target": "/infrastructure/IF-SVR-EXA-001.md",
+      "relationship": "MEMBER_OF"
+    },
+    {
+      "source": "/infrastructure/IF-VMS-LNX-001.md",
+      "target": "/infrastructure/IF-CLS-KVM-001.md",
+      "relationship": "MEMBER_OF"
+    },
+    {
+      "source": "/infrastructure/IF-VMS-LNX-002.md",
+      "target": "/infrastructure/IF-CLS-KVM-001.md",
+      "relationship": "MEMBER_OF"
+    },
+    {
+      "source": "/infrastructure/IF-VMS-LNX-003.md",
+      "target": "/infrastructure/IF-SVR-LNX-001.md",
+      "relationship": "MEMBER_OF"
+    },
+    {
+      "source": "/infrastructure/IF-VMS-LNX-004.md",
+      "target": "/infrastructure/IF-SVR-LNX-001.md",
+      "relationship": "MEMBER_OF"
+    },
+    {
+      "source": "/infrastructure/IF-VMS-LNX-005.md",
+      "target": "/infrastructure/IF-SVR-LNX-001.md",
+      "relationship": "MEMBER_OF"
+    },
+    {
+      "source": "/services/SRV-CS1-SRVA.md",
+      "target": "/customers/CUST-000001.md",
+      "relationship": "CONSUMED_BY"
+    },
+    {
+      "source": "/services/SRV-CS1-SRVA.md",
+      "target": "/workloads/WL-CS1-EMP.md",
+      "relationship": "SUPPORTS"
+    },
+    {
+      "source": "/services/SRV-CS1-SRVB.md",
+      "target": "/customers/CUST-000001.md",
+      "relationship": "CONSUMED_BY"
+    },
+    {
+      "source": "/services/SRV-CS1-SRVB.md",
+      "target": "/workloads/WL-CS1-TM4.md",
+      "relationship": "SUPPORTS"
+    },
+    {
+      "source": "/services/SRV-CS1-SRVB.md",
+      "target": "/workloads/WL-CS1-XXI.md",
+      "relationship": "SUPPORTS"
+    },
+    {
+      "source": "/workloads/WL-CS1-EMP.md",
+      "target": "/environments/EV-CS1-PRO.md",
+      "relationship": "DEPLOYED_IN"
+    },
+    {
+      "source": "/workloads/WL-CS1-EMP.md",
+      "target": "/services/SRV-CS1-SRVA.md",
+      "relationship": "USES"
+    },
+    {
+      "source": "/workloads/WL-CS1-TM4.md",
+      "target": "/environments/EV-CS1-PRO.md",
+      "relationship": "DEPLOYED_IN"
+    },
+    {
+      "source": "/workloads/WL-CS1-TM4.md",
+      "target": "/services/SRV-CS1-SRVA.md",
+      "relationship": "USES"
+    },
+    {
+      "source": "/workloads/WL-CS1-XXI.md",
+      "target": "/environments/EV-CS1-PRO.md",
+      "relationship": "DEPLOYED_IN"
+    },
+    {
+      "source": "/workloads/WL-CS1-XXI.md",
+      "target": "/services/SRV-CS1-SRVB.md",
+      "relationship": "USES"
+    }
+  ]
+}

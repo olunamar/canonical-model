@@ -1,0 +1,5 @@
+bundle:
+  name: canonical-model
+  version: 1.0.0
+  type: canonical
+  description: Enterprise Ontology Canonical Model built under Google OKF standards.

@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 750px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"group": "Customers", "id": "/customers/CUST-000001.md", "label": "Customer A", "shape": "dot", "title": "Domain: Customers\nType: PUBLIC"}, {"group": "Environments", "id": "/environments/EV-CS1-PRO.md", "label": "Production", "shape": "dot", "title": "Domain: Environments\nType: CanonicalEntity"}, {"group": "Infrastructure", "id": "/infrastructure/IF-APS-TMC-001.md", "label": "TOMCAT-LINUX-001", "shape": "dot", "title": "Domain: Infrastructure\nType: CanonicalEntity"}, {"group": "Infrastructure", "id": "/infrastructure/IF-APS-TMC-002.md", "label": "TOMCAT-LINUX-002", "shape": "dot", "title": "Domain: Infrastructure\nType: CanonicalEntity"}, {"group": "Infrastructure", "id": "/infrastructure/IF-APS-TMC-003.md", "label": "TOMCAT-LINUX-003", "shape": "dot", "title": "Domain: Infrastructure\nType: CanonicalEntity"}, {"group": "Infrastructure", "id": "/infrastructure/IF-APS-TMC-004.md", "label": "TOMCAT-LINUX-004", "shape": "dot", "title": "Domain: Infrastructure\nType: CanonicalEntity"}, {"group": "Infrastructure", "id": "/infrastructure/IF-CLS-KVM-001.md", "label": "CLUSTER-GLOBAL-01", "shape": "dot", "title": "Domain: Infrastructure\nType: CanonicalEntity"}, {"group": "Infrastructure", "id": "/infrastructure/IF-DBI-ORA-001.md", "label": "ORACLE-DB-TLP", "shape": "dot", "title": "Domain: Infrastructure\nType: CanonicalEntity"}, {"group": "Infrastructure", "id": "/infrastructure/IF-DBI-ORA-002.md", "label": "ORACLE-DB-LP1", "shape": "dot", "title": "Domain: Infrastructure\nType: CanonicalEntity"}, {"group": "Infrastructure", "id": "/infrastructure/IF-DBI-ORA-003.md", "label": "ORACLE-DB-BPM", "shape": "dot", "title": "Domain: Infrastructure\nType: CanonicalEntity"}, {"group": "Infrastructure", "id": "/infrastructure/IF-DBI-ORA-004.md", "label": "ORACLE-DB-XXI-1", "shape": "dot", "title": "Domain: Infrastructure\nType: CanonicalEntity"}, {"group": "Infrastructure", "id": "/infrastructure/IF-DBI-ORA-005.md", "label": "ORACLE-DB-XXI-2", "shape": "dot", "title": "Domain: Infrastructure\nType: CanonicalEntity"}, {"group": "Infrastructure", "id": "/infrastructure/IF-DBP-ORA-001.md", "label": "CLUSTER-ORACLE-CS1", "shape": "dot", "title": "Domain: Infrastructure\nType: CanonicalEntity"}, {"group": "Infrastructure", "id": "/infrastructure/IF-DBP-ORA-002.md", "label": "CLUSTER-ORACLE-CS2", "shape": "dot", "title": "Domain: Infrastructure\nType: CanonicalEntity"}, {"group": "Infrastructure", "id": "/infrastructure/IF-SVR-EXA-001.md", "label": "SERVER-EXA-01", "shape": "dot", "title": "Domain: Infrastructure\nType: CanonicalEntity"}, {"group": "Infrastructure", "id": "/infrastructure/IF-SVR-LNX-001.md", "label": "SERVER-LINUX-001", "shape": "dot", "title": "Domain: Infrastructure\nType: CanonicalEntity"}, {"group": "Infrastructure", "id": "/infrastructure/IF-VMS-EXA-001.md", "label": "VM-EXA-001", "shape": "dot", "title": "Domain: Infrastructure\nType: CanonicalEntity"}, {"group": "Infrastructure", "id": "/infrastructure/IF-VMS-LNX-001.md", "label": "VM-LINUX-001", "shape": "dot", "title": "Domain: Infrastructure\nType: CanonicalEntity"}, {"group": "Infrastructure", "id": "/infrastructure/IF-VMS-LNX-002.md", "label": "VM-LINUX-002", "shape": "dot", "title": "Domain: Infrastructure\nType: CanonicalEntity"}, {"group": "Infrastructure", "id": "/infrastructure/IF-VMS-LNX-003.md", "label": "VM-LINUX-003", "shape": "dot", "title": "Domain: Infrastructure\nType: CanonicalEntity"}, {"group": "Infrastructure", "id": "/infrastructure/IF-VMS-LNX-004.md", "label": "VM-LINUX-004", "shape": "dot", "title": "Domain: Infrastructure\nType: CanonicalEntity"}, {"group": "Infrastructure", "id": "/infrastructure/IF-VMS-LNX-005.md", "label": "VM-LINUX-005", "shape": "dot", "title": "Domain: Infrastructure\nType: CanonicalEntity"}, {"group": "Services", "id": "/services/SRV-CS1-SRVA.md", "label": "Service SILVER", "shape": "dot", "title": "Domain: Services\nType: CanonicalEntity"}, {"group": "Services", "id": "/services/SRV-CS1-SRVB.md", "label": "Service GOLD", "shape": "dot", "title": "Domain: Services\nType: CanonicalEntity"}, {"group": "Workloads", "id": "/workloads/WL-CS1-EMP.md", "label": "CSTA-EMP", "shape": "dot", "title": "Domain: Workloads\nType: CanonicalEntity"}, {"group": "Workloads", "id": "/workloads/WL-CS1-TM4.md", "label": "TEAM-4", "shape": "dot", "title": "Domain: Workloads\nType: CanonicalEntity"}, {"group": "Workloads", "id": "/workloads/WL-CS1-XXI.md", "label": "XXI-PORTAL", "shape": "dot", "title": "Domain: Workloads\nType: CanonicalEntity"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "from": "/customers/CUST-000001.md", "label": "OWNS", "title": "OWNS", "to": "/workloads/WL-CS1-EMP.md"}, {"arrows": "to", "from": "/customers/CUST-000001.md", "label": "OWNS", "title": "OWNS", "to": "/workloads/WL-CS1-TM4.md"}, {"arrows": "to", "from": "/customers/CUST-000001.md", "label": "OWNS", "title": "OWNS", "to": "/workloads/WL-CS1-XXI.md"}, {"arrows": "to", "from": "/customers/CUST-000001.md", "label": "CONSUMES", "title": "CONSUMES", "to": "/services/SRV-CS1-SRVA.md"}, {"arrows": "to", "from": "/customers/CUST-000001.md", "label": "CONSUMES", "title": "CONSUMES", "to": "/services/SRV-CS1-SRVB.md"}, {"arrows": "to", "from": "/environments/EV-CS1-PRO.md", "label": "CONTAINS", "title": "CONTAINS", "to": "/workloads/WL-CS1-TM4.md"}, {"arrows": "to", "from": "/environments/EV-CS1-PRO.md", "label": "CONTAINS", "title": "CONTAINS", "to": "/workloads/WL-CS1-XXI.md"}, {"arrows": "to", "from": "/environments/EV-CS1-PRO.md", "label": "CONTAINS", "title": "CONTAINS", "to": "/workloads/WL-CS1-EMP.md"}, {"arrows": "to", "from": "/environments/EV-CS1-PRO.md", "label": "USES", "title": "USES", "to": "/services/SRV-CS1-SRVA.md"}, {"arrows": "to", "from": "/infrastructure/IF-APS-TMC-001.md", "label": "HOSTS", "title": "HOSTS", "to": "/workloads/WL-CS1-EMP.md"}, {"arrows": "to", "from": "/infrastructure/IF-APS-TMC-001.md", "label": "RUNS_ON", "title": "RUNS_ON", "to": "/infrastructure/IF-VMS-LNX-001.md"}, {"arrows": "to", "from": "/infrastructure/IF-APS-TMC-002.md", "label": "HOSTS", "title": "HOSTS", "to": "/workloads/WL-CS1-TM4.md"}, {"arrows": "to", "from": "/infrastructure/IF-APS-TMC-002.md", "label": "RUNS_ON", "title": "RUNS_ON", "to": "/infrastructure/IF-VMS-LNX-002.md"}, {"arrows": "to", "from": "/infrastructure/IF-APS-TMC-003.md", "label": "HOSTS", "title": "HOSTS", "to": "/workloads/WL-CS1-XXI.md"}, {"arrows": "to", "from": "/infrastructure/IF-APS-TMC-003.md", "label": "RUNS_ON", "title": "RUNS_ON", "to": "/infrastructure/IF-VMS-LNX-004.md"}, {"arrows": "to", "from": "/infrastructure/IF-APS-TMC-003.md", "label": "RUNS_ON", "title": "RUNS_ON", "to": "/infrastructure/IF-VMS-LNX-005.md"}, {"arrows": "to", "from": "/infrastructure/IF-APS-TMC-004.md", "label": "HOSTS", "title": "HOSTS", "to": "/workloads/WL-CS1-XXI.md"}, {"arrows": "to", "from": "/infrastructure/IF-APS-TMC-004.md", "label": "RUNS_ON", "title": "RUNS_ON", "to": "/infrastructure/IF-VMS-LNX-005.md"}, {"arrows": "to", "from": "/infrastructure/IF-APS-TMC-004.md", "label": "RUNS_ON", "title": "RUNS_ON", "to": "/infrastructure/IF-VMS-LNX-004.md"}, {"arrows": "to", "from": "/infrastructure/IF-DBI-ORA-001.md", "label": "USED_BY", "title": "USED_BY", "to": "/workloads/WL-CS1-EMP.md"}, {"arrows": "to", "from": "/infrastructure/IF-DBI-ORA-001.md", "label": "MEMBER_OF", "title": "MEMBER_OF", "to": "/infrastructure/IF-DBP-ORA-001.md"}, {"arrows": "to", "from": "/infrastructure/IF-DBI-ORA-001.md", "label": "RUNS_ON", "title": "RUNS_ON", "to": "/infrastructure/IF-VMS-EXA-001.md"}, {"arrows": "to", "from": "/infrastructure/IF-DBI-ORA-002.md", "label": "USED_BY", "title": "USED_BY", "to": "/workloads/WL-CS1-EMP.md"}, {"arrows": "to", "from": "/infrastructure/IF-DBI-ORA-002.md", "label": "MEMBER_OF", "title": "MEMBER_OF", "to": "/infrastructure/IF-DBP-ORA-001.md"}, {"arrows": "to", "from": "/infrastructure/IF-DBI-ORA-002.md", "label": "RUNS_ON", "title": "RUNS_ON", "to": "/infrastructure/IF-VMS-EXA-001.md"}, {"arrows": "to", "from": "/infrastructure/IF-DBI-ORA-003.md", "label": "USED_BY", "title": "USED_BY", "to": "/workloads/WL-CS1-TM4.md"}, {"arrows": "to", "from": "/infrastructure/IF-DBI-ORA-003.md", "label": "MEMBER_OF", "title": "MEMBER_OF", "to": "/infrastructure/IF-DBP-ORA-002.md"}, {"arrows": "to", "from": "/infrastructure/IF-DBI-ORA-003.md", "label": "RUNS_ON", "title": "RUNS_ON", "to": "/infrastructure/IF-VMS-LNX-003.md"}, {"arrows": "to", "from": "/infrastructure/IF-DBI-ORA-004.md", "label": "USED_BY", "title": "USED_BY", "to": "/workloads/WL-CS1-XXI.md"}, {"arrows": "to", "from": "/infrastructure/IF-DBI-ORA-004.md", "label": "MEMBER_OF", "title": "MEMBER_OF", "to": "/infrastructure/IF-DBP-ORA-001.md"}, {"arrows": "to", "from": "/infrastructure/IF-DBI-ORA-004.md", "label": "RUNS_ON", "title": "RUNS_ON", "to": "/infrastructure/IF-VMS-EXA-001.md"}, {"arrows": "to", "from": "/infrastructure/IF-DBI-ORA-005.md", "label": "USED_BY", "title": "USED_BY", "to": "/workloads/WL-CS1-XXI.md"}, {"arrows": "to", "from": "/infrastructure/IF-DBI-ORA-005.md", "label": "MEMBER_OF", "title": "MEMBER_OF", "to": "/infrastructure/IF-DBP-ORA-001.md"}, {"arrows": "to", "from": "/infrastructure/IF-DBI-ORA-005.md", "label": "RUNS_ON", "title": "RUNS_ON", "to": "/infrastructure/IF-VMS-EXA-001.md"}, {"arrows": "to", "from": "/infrastructure/IF-VMS-EXA-001.md", "label": "MEMBER_OF", "title": "MEMBER_OF", "to": "/infrastructure/IF-SVR-EXA-001.md"}, {"arrows": "to", "from": "/infrastructure/IF-VMS-LNX-001.md", "label": "MEMBER_OF", "title": "MEMBER_OF", "to": "/infrastructure/IF-CLS-KVM-001.md"}, {"arrows": "to", "from": "/infrastructure/IF-VMS-LNX-002.md", "label": "MEMBER_OF", "title": "MEMBER_OF", "to": "/infrastructure/IF-CLS-KVM-001.md"}, {"arrows": "to", "from": "/infrastructure/IF-VMS-LNX-003.md", "label": "MEMBER_OF", "title": "MEMBER_OF", "to": "/infrastructure/IF-SVR-LNX-001.md"}, {"arrows": "to", "from": "/infrastructure/IF-VMS-LNX-004.md", "label": "MEMBER_OF", "title": "MEMBER_OF", "to": "/infrastructure/IF-SVR-LNX-001.md"}, {"arrows": "to", "from": "/infrastructure/IF-VMS-LNX-005.md", "label": "MEMBER_OF", "title": "MEMBER_OF", "to": "/infrastructure/IF-SVR-LNX-001.md"}, {"arrows": "to", "from": "/services/SRV-CS1-SRVA.md", "label": "CONSUMED_BY", "title": "CONSUMED_BY", "to": "/customers/CUST-000001.md"}, {"arrows": "to", "from": "/services/SRV-CS1-SRVA.md", "label": "SUPPORTS", "title": "SUPPORTS", "to": "/workloads/WL-CS1-EMP.md"}, {"arrows": "to", "from": "/services/SRV-CS1-SRVB.md", "label": "CONSUMED_BY", "title": "CONSUMED_BY", "to": "/customers/CUST-000001.md"}, {"arrows": "to", "from": "/services/SRV-CS1-SRVB.md", "label": "SUPPORTS", "title": "SUPPORTS", "to": "/workloads/WL-CS1-TM4.md"}, {"arrows": "to", "from": "/workloads/WL-CS1-EMP.md", "label": "DEPLOYED_IN", "title": "DEPLOYED_IN", "to": "/environments/EV-CS1-PRO.md"}, {"arrows": "to", "from": "/workloads/WL-CS1-EMP.md", "label": "USES", "title": "USES", "to": "/services/SRV-CS1-SRVA.md"}, {"arrows": "to", "from": "/workloads/WL-CS1-TM4.md", "label": "DEPLOYED_IN", "title": "DEPLOYED_IN", "to": "/environments/EV-CS1-PRO.md"}, {"arrows": "to", "from": "/workloads/WL-CS1-TM4.md", "label": "USES", "title": "USES", "to": "/services/SRV-CS1-SRVA.md"}, {"arrows": "to", "from": "/workloads/WL-CS1-XXI.md", "label": "DEPLOYED_IN", "title": "DEPLOYED_IN", "to": "/environments/EV-CS1-PRO.md"}, {"arrows": "to", "from": "/workloads/WL-CS1-XXI.md", "label": "USES", "title": "USES", "to": "/services/SRV-CS1-SRVB.md"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
