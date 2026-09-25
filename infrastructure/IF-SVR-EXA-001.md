@@ -1,7 +1,6 @@
 ---
-type: CanonicalEntity
+type: PhysicalServer
 domain: Infrastructure
-entity: PhysicalServer
 entity_name: SERVER-EXA-01
 description: Physical server
 id_unico: IF-SVR-EXA-001

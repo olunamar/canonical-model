@@ -1,5 +1,5 @@
 ---
-type: CanonicalEntity
+type: BusinessService
 domain: Workloads
 entity_name: ERP Compañia (XXI-PORTAL)
 description: Customer workload supported by managed infrastructure services.

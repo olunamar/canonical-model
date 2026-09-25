@@ -1,7 +1,6 @@
 ---
-type: CanonicalEntity
+type: PhysicalServer
 domain: Infrastructure
-entity: PhysicalServer
 entity_name: SERVER-LINUX-001
 description: Physical server
 id_unico: IF-SVR-LNX-001

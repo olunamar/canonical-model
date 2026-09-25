@@ -1,7 +1,6 @@
 ---
-type: CanonicalEntity
+type: DatabaseInstance
 domain: Infrastructure
-entity: DatabaseInstance
 entity_name: ORACLE-DB-XXI-2
 description: Active running instance process of a database platform engine.
 id_unico: IF-DBI-ORA-005

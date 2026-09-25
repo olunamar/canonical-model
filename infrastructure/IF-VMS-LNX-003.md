@@ -1,7 +1,6 @@
 ---
-type: CanonicalEntity
+type: VirtualMachine
 domain: Infrastructure
-entity: VirtualMachine
 entity_name: VM-LINUX-003
 description: Virtualized server instance running within a hypervisor cluster.
 id_unico: IF-VMS-LNX-003

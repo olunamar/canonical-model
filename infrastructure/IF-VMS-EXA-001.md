@@ -1,7 +1,6 @@
 ---
-type: CanonicalEntity
+type: VirtualMachine
 domain: Infrastructure
-entity: VirtualMachine
 entity_name: VM-EXA-001
 description: Virtualized server instance running within a hypervisor cluster or physical server.
 id_unico: IF-VMS-EXA-001

@@ -1,7 +1,6 @@
 ---
-type: CanonicalEntity
+type: DatabasePlatform
 domain: Infrastructure
-entity: DatabasePlatform
 entity_name: CLUSTER-ORACLE-CS2
 description: Database Cluster engine installation.
 id_unico: IF-DBP-ORA-002

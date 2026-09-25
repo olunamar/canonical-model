@@ -1,5 +1,5 @@
 ---
-type: CanonicalEntity
+type: BusinessService
 domain: Workloads
 entity_name: Catálogo de servicios (TEAM-4)
 description: Customer workload supported by managed infrastructure services.
@@ -10,7 +10,7 @@ relations:
   - type: DEPLOYED_IN
     target: /environments/EV-CS1-PRO.md
   - type: USES
-    target: /services/SRV-CS1-SRVA.md
+    target: /services/SRV-CS1-SRVB.md
 ---
 
 

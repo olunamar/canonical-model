@@ -1,7 +1,6 @@
 ---
-type: CanonicalEntity
+type: Environment
 domain: Environments
-entity: Environment
 entity_name: Production
 description: Deployment stage environment (e.g., Production, Staging, Development).
 id_unico: EV-CS1-PRO

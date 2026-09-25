@@ -1,7 +1,6 @@
 ---
-type: CanonicalEntity
+type: ApplicationServer
 domain: Infrastructure
-entity: ApplicationServer
 entity_name: TOMCAT-LINUX-002
 description: Compute instance configured with web runtime engines (Tomcat).
 id_unico: IF-APS-TMC-002

@@ -1,5 +1,5 @@
 ---
-type: CanonicalEntity
+type: BusinessService
 domain: Workloads
 entity_name: Portal del empleado (CSTA-EMP)
 description: Customer workload supported by managed infrastructure services.

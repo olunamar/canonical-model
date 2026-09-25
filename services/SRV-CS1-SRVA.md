@@ -1,7 +1,6 @@
 ---
-type: CanonicalEntity
+type: ServiceInstance
 domain: Services
-entity: ServiceInstance
 entity_name: Service SILVER
 description: Base instance of a service running in a specific environment.
 id_unico: SRV-CS1-SRVA

@@ -1,7 +1,6 @@
 ---
-type: CanonicalEntity
+type: HypervisorCluster
 domain: Infrastructure
-entity: HypervisorCluster
 entity_name: CLUSTER-GLOBAL-01
 description: Physical VMWare hypervisor compute cluster hosting virtual infrastructure.
 id_unico: IF-CLS-KVM-001
